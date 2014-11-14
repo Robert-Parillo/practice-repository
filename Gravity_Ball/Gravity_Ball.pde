@@ -1,11 +1,3 @@
-int BallCount = 100;
-
-float[] xr = new float [BallCount];
-float[] yr =   new float [BallCount];
-float[] szr =    new float [BallCount];
-float[] xspeedr =  new float [BallCount];
-float[] yspeedr =    new float [BallCount];
-
 
 
 float x = 100;   
@@ -19,17 +11,7 @@ float gravity = 0.1;
 
 void setup() {
   size(displayWidth,displayHeight);
-  for (int i = 0; i<BallCount; i++) {
-    if (x+sz/2 >= width) {
-    szr[i] = 30; 
-    xr[i] = 100; 
-    yr[i] = 0; 
-
-    xspeedr[i] = 5; 
-    yspeedr[i] = 0; 
-    }
-  }
-  
+ 
 }
 
 void draw() {
