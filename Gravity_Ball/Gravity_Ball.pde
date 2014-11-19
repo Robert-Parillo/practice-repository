@@ -1,8 +1,8 @@
 
 
 
-float x1 = 100;   
-float y1 = 0; 
+float x1 = 0;   
+float y1 = height; 
 float sz = 30;
 
 float xspeed = 15; 
@@ -42,7 +42,7 @@ void draw() {
   
   
   
-   if (x1+sz/2 >= width || x1-sz/2 <= 0) {
+  if (x1+sz/2 >= width || x1-sz/2 <= 0) {
      ellipse(x1,y1,sz,sz);
     xspeed = xspeed * -0.80; 
     

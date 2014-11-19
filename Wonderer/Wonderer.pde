@@ -8,7 +8,7 @@ boolean keys[] = new boolean[255];
 
 void setup() {
   
-  background(0);
+  background(255);
   
   colorMode(HSB, 360, 100, 100, 100);
   size(displayWidth, displayHeight);
@@ -24,12 +24,12 @@ void draw() {
   
   updatePlayers();
 
-  fill(frameCount%360, 100, 100, 100);
-  stroke(frameCount%360, 100, 100, 100);
+  fill(frameCount%360, 255, 255, 255);
+//  stroke(frameCount%360, 100, 100, 100);
 
   vel.add(acc);
 
-  vel.limit(5);
+  vel.limit(20);
 
   loc.add(vel);
 
@@ -82,6 +82,10 @@ void updatePlayers(){
   if (keys['d']) {
     acc.x=0.1;
   }
+  if (keys[' ']) {
+    background(#FFFFFF);
+  }
+  
   
 }
 
