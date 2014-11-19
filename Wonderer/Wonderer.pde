@@ -71,16 +71,16 @@ void keyReleased() {
 void updatePlayers(){
   
    if (keys['w']) {
-    acc.y=-0.05;
+    acc.y=-0.1;
   }
   if (keys['s']) {
-    acc.y=0.05;
+    acc.y=0.1;
   }
   if (keys['a']) {
-    acc.x=-0.05;
+    acc.x=-0.1;
   }
   if (keys['d']) {
-    acc.x=0.05;
+    acc.x=0.1;
   }
   
 }
