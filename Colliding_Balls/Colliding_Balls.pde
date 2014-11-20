@@ -19,7 +19,7 @@ void draw() {
 
  
   if (dist(mouseX, mouseY, loc.x, loc.y) < sz/2) {  
-    fill(#FEFF03);                                
+    fill(#FEFF03);     
   } else {                                           
     fill(0, 0, 255);                               
   }
