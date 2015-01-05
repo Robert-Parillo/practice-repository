@@ -1,4 +1,4 @@
-import ddf.minim.spi.*;
+import ddf.minim.spi.*;  //All this is required to help the audio play
 import ddf.minim.signals.*;
 import ddf.minim.*;
 import ddf.minim.analysis.*;
@@ -11,19 +11,19 @@ AudioPlayer player;
 Minim minim;
 
 
-Firework[] fs = new Firework[150];
+Firework[] fs = new Firework[150]; //Limit of 150 fireworks
 boolean once;
 
-PImage Castle;
+PImage Castle;   // Declares Castle
 
 void setup() {
   size(displayWidth,displayHeight, P3D);
   
-   minim = new Minim(this);
+   minim = new Minim(this);   
    
-   player = minim.loadFile("Letitgo.mp3");
+   player = minim.loadFile("Letitgo.mp3");  //Loads audio to play
    
-   player.play();
+   player.play();  //Plays audio
    
    smooth();
   for (int i = 0; i < fs.length; i++){
@@ -31,14 +31,14 @@ void setup() {
   }
   
  
-  Castle = loadImage("discas.png");
+  Castle = loadImage("discas.png");   //Loads Castle
   
    
 }
 
-void mouseReleased(){
+void mouseReleased(){  //Tells Computer to shoot Firework once mouse is released
   once = false;
-  for (int i = 0; i < fs.length; i++){
+  for (int i = 0; i < fs.length; i++){     
     if((fs[i].hidden)&&(!once)){
       fs[i].launch();
       once = true;
@@ -50,12 +50,9 @@ void mouseReleased(){
 void draw() {
   background(0);
   
-   for (int i = 0; i < fs.length; i++){
+   for (int i = 0; i < fs.length; i++){   //Shoots firework
     fs[i].draw();
   }
   
-  fill(0,0,0);
-  rect(0,height+50,width,height);
-  
-  image(Castle, 0, 0);
+  image(Castle, 0, 0);  //Puts the Castle in the screen
 }

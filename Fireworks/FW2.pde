@@ -1,21 +1,21 @@
-class Firework{
-  float x, y, oldX,oldY, ySpeed, targetX, targetY, explodeTimer, flareWeight, flareAngle;
+class Firework{ //Fireworks Class
+  float x, y, oldX,oldY, ySpeed, targetX, targetY, explodeTimer, flareWeight, flareAngle; //Variables for Firework
   int flareAmount, duration;
-  boolean launched,exploded,hidden;
+  boolean launched,exploded,hidden;  //booleans to shoot explode and make the fire works disappear 
   color flare;
   Firework(){
-    launched = false;
+    launched = false;   
     exploded = false;
     hidden = true;
   }
   void draw(){
-    if((launched)&&(!exploded)&&(!hidden)){
+    if((launched)&&(!exploded)&&(!hidden)){  //Shoots the initial firework or the rocket
       launchMaths();
       strokeWeight(1);
       stroke(255);
       line(x,y,oldX,oldY);
     }
-    if((!launched)&&(exploded)&&(!hidden)){
+    if((!launched)&&(exploded)&&(!hidden)){  //Makes the Firework explode
       explodeMaths();
       noStroke();
       strokeWeight(flareWeight);
@@ -27,11 +27,11 @@ class Firework{
           popMatrix();
        }
     }
-    if((!launched)&&(!exploded)&&(hidden)){
+    if((!launched)&&(!exploded)&&(hidden)){  //Makes the Firework disappear
       
     }
   }
-  void launch(){
+  void launch(){    //everything needed to launch the firework
     x = oldX = mouseX + ((random(5)*10) - 25);
     y = oldY = height;
     targetX = mouseX;
@@ -46,7 +46,7 @@ class Firework{
     exploded = false;
     hidden = false;
   }
-  void launchMaths(){
+  void launchMaths(){   //All the math behind the launch code
     oldX = x;
     oldY = y;
     if(dist(x,y,targetX,targetY) > 10){
@@ -56,20 +56,20 @@ class Firework{
       explode();
     }
   }
-  void explode(){
+  void explode(){  //All variables needed to explode the Firework
     explodeTimer = 0;
     launched = false;
     exploded = true;
     hidden = false;
   }
-  void explodeMaths(){
+  void explodeMaths(){  //Math behind the explosion
     if(explodeTimer < duration){
       explodeTimer+= 1;
     }else{
       hide();
     }
   }
-  void hide(){
+  void hide(){   //All variables used for making the Firework disappear
     launched = false;
     exploded = false;
     hidden = true;
